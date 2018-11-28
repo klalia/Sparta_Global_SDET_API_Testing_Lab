@@ -11,10 +11,8 @@ class Generator
   end
 
   def get_multiple_postcodes
-    JSON.parse(self.class.post('/postcodes', body: { "postcodes":['SL09DH', 'UB12PD']}).body)
+    postcodes_array = ["SL09DH", "UB12PD", "G21BP", "OX495NU", "M320JG", "NE301DP"]
+    JSON.parse(self.class.post('/postcodes', body: { "postcodes" => postcodes_array.sample(3)}).body)
   end
 
 end
-
-p = Generator.new
-p p.get_single_postcode

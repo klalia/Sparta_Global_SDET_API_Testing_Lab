@@ -5,20 +5,19 @@ require_relative './lib/data.rb'
 class Postcodesio
   include HTTParty
 
-  base_uri 'https://api.postcodes.io'
+  # attr_accessor :single_postcode, :multiple_postcode
 
-  attr_accessor :single
-
-  def initialize
-    @single_postcode = Generator.new
-  end
+  # def initialize
+  #   @single_postcode = Generator.new
+  #   @multiple_postcode = Generator.new
+  # end
 
   def get_single_postcode
-    @single_postcode.get_single_postcode
+    Generator.new.get_single_postcode
   end
 
   def get_multiple_postcodes
-    JSON.parse(self.class.post('/postcodes', body: { "postcodes":['SL09DH', 'UB12PD']}).body)
+    Generator.new.get_multiple_postcodes
   end
 
   def get_status_message
@@ -100,5 +99,13 @@ class Postcodesio
   def get_second_query
     get_multiple_postcodes["result"][1]["query"]
   end
+
+  def get_multiple_results_hash
+    get_multiple_postcodes["result"][1]["result"]
+  end
+
+  # def get_multiple_postcode
+  #   get_multiple_postcodes["result"][1]["postcode"].gsub!(/\s/,'')
+  # end
 
 end
