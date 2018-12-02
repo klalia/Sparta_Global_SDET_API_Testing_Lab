@@ -102,11 +102,11 @@ describe Postcodesio do
     end
 
     it "should return the first query as the first postcode in the response" do
-      # expect(@postcodesio.get_first_query).to be true
+      expect(@postcodesio.get_first_query).to be_kind_of String
     end
 
     it "should return the second query as the first postcode in the response" do
-      # expect(@postcodesio.get_second_query).to be true
+      expect(@postcodesio.get_second_query).to be_kind_of String
     end
 
     it "should have a results hash" do
@@ -190,66 +190,6 @@ describe Postcodesio do
       expect(@postcodesio.get_multiple_results_hash).to be_kind_of Hash
     end
 
-    it "should return a postcode between 5-7 in length"  do
-      # expect(@postcodesio.get_multiple_postcode.length).to be_between(5,7).inclusive
-    end
-
-    it "should return an quality key integer between 1-9" do
-    end
-
-    it "should return an ordnance survey eastings value as integer" do
-    end
-
-    it "should return an ordnance survey eastings value as integer" do
-    end
-
-    it "should return a country which is one of the four constituent countries of the UK" do
-    end
-
-    it "should return a string value for NHS authority " do
-    end
-
-    it "should return a longitude float value" do
-    end
-
-    it "should return a latitude float value" do
-    end
-
-    it "should return a parliamentary constituency string" do
-    end
-
-    it "should return a european_electoral_region string" do
-    end
-
-    it "should return a primary_care_trust string" do
-    end
-
-    it "should return a region string" do
-    end
-
-    it "should return a parish string" do
-    end
-
-    it "should return a lsoa string" do
-    end
-
-    it "should return a msoa string" do
-    end
-    # admin ward and county are not documented however tested below
-
-    it "should return a admin_district string" do
-    end
-
-    it "should return a incode string of three characters" do
-    end
-
-    it "should return a msoa string" do
-    end
-
-    it "should return a incode string of 3-4 characters" do
-    end
-
   end
-
 
 end

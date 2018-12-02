@@ -5,13 +5,6 @@ require_relative './lib/data.rb'
 class Postcodesio
   include HTTParty
 
-  # attr_accessor :single_postcode, :multiple_postcode
-
-  # def initialize
-  #   @single_postcode = Generator.new
-  #   @multiple_postcode = Generator.new
-  # end
-
   def get_single_postcode
     Generator.new.get_single_postcode
   end
@@ -103,9 +96,5 @@ class Postcodesio
   def get_multiple_results_hash
     get_multiple_postcodes["result"][1]["result"]
   end
-
-  # def get_multiple_postcode
-  #   get_multiple_postcodes["result"][1]["postcode"].gsub!(/\s/,'')
-  # end
 
 end
